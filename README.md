@@ -19,7 +19,7 @@ The *help* command should print the list of commands as they appear above with t
 
 The allowed commands are:
 
-You can see the exact behavior of the *help* command wuth the help of the provided solution executable or inspecting the output of the second test case. The first 9 commands are programs that you are going to **spawn** as separate processes using the **posix_spawnp()** system call. An **example** program that spawns an echo command is provided in the repository: **myspawn.c**. You are going to write your own shell interpreter in the file **rsh.c** that can execute the commands above. Commands 10, 11, and 12 can be considered as built-in shell commands, which will **not** spawn a separate process. The handling of commands 11 and 12 by your program is trivial: return from the main function and print a list of commands, respectively. For the "cd" command, you are going to use the **chdir()** system call to change the directory to a target directory. However, if the user specifies more than one argument to the cd command, similar to bash, you should print the following error message (**in standard output**) and **do not perform any cd action**:
+You can see the exact behavior of the *help* command with the help of the provided solution executable or inspecting the output of the second test case. The first 9 commands are programs that you are going to **spawn** as separate processes using the **posix_spawnp()** system call. An **example** program that spawns an echo command is provided in the repository: **myspawn.c**. You are going to write your own shell interpreter in the file **rsh.c** that can execute the commands above. Commands 10, 11, and 12 can be considered as built-in shell commands, which will **not** spawn a separate process. The handling of commands 11 and 12 by your program is trivial: return from the main function and print a list of commands, respectively. For the "cd" command, you are going to use the **chdir()** system call to change the directory to a target directory. However, if the user specifies more than one argument to the cd command, similar to bash, you should print the following error message (**in standard output**) and **do not perform any cd action**:
 
 -rsh: cd: too many arguments
 
@@ -32,11 +32,11 @@ diff mytest5.out test_cases/test05.out
 
 The diff command should not print anything if your output is identical to the expected output.
 
-For all the commands you will be implementing, you can assume that the maximum number of command line arguments provided will be 20 -- so that you can use a fixed sized static array for your command line arguments.
+For all the commands you will be implementing, you can assume that the maximum number of command line arguments provided will be 20 -- so that you can use a fixed-size static array for your command line arguments.
 
 When the program is run, the shell prompt "rsh>" should be displayed. The shell should be in an infinite loop until the command **exit** is entered at which point the shell program should be terminated with a "return 0".
 
-If the user enters any dissallowed command or try to execute some other program, you should display the following message (in standard output) and return to the prompt:
+If the user enters any disallowed command or tries to execute some other program, you should display the following message (in standard output) and return to the prompt:
 
 NOT ALLOWED!
 
@@ -55,9 +55,9 @@ You can use the starter code rsh.c to complete the project. A Makefile is also p
 
 ### Github Repo Setup and Gradescope Submission Instructions
 
-The setup of the git repo is similar to the one for Project 2. Refer to those instructions for your github repo setup.
+The setup of the git repo is similar to the one for Project 2. Refer to those instructions for your GitHub repo setup.
 
-For Project 3, create a separate private repository specific for this project under your own user name. For example, I created a private repo named **csci210_project3** and my github username is tolgacan. A private repo can be created from the GitHub web site by going to your repositories after clicking on your profile picture (e.g., https://github.com/tolgacan?tab=repositories) and clicking on the "New" button in the top right corner. After that, you can enter a command sequence similar to the one below to clone the starter repo and copy it to your private repo to work with. The **project3** repo under the organization **CSCI210Mines** is the public repository that contains the starter code.
+For Project 3, create a separate private repository specific for this project under your own user name. For example, I created a private repo named **csci210_project3** and my GitHub username is tolgacan. A private repo can be created from the GitHub website by going to your repositories after clicking on your profile picture (e.g., https://github.com/tolgacan?tab=repositories) and clicking on the "New" button in the top right corner. After that, you can enter a command sequence similar to the one below to clone the starter repo and copy it to your private repo to work with. The **project3** repo under the organization **CSCI210Mines** is the public repository that contains the starter code.
 
 ```
 git clone git@github.com:CSCI210Mines/project3_fall25.git
@@ -76,8 +76,8 @@ git commit -m "your commit message here"
 git push -u origin main
 ```
 
-You can also clone your repo and work on it and push the updates from different machines if you add the ssh public keys for these machines to your github profile.
+You can also clone your repo and work on it and push the updates from different machines if you add the ssh public keys for these machines to your GitHub profile.
 
 **Submission on Gradescope:**
 
-After you are logged in to your github account in a browser, if you follow the Gradescope assignment page for this project from Canvas and try to upload a submission, you will be able to select the Github submission options and select your private repository for this project to submit your solution on Gradescope.
+After you are logged in to your GitHub account in a browser, if you follow the Gradescope assignment page for this project from Canvas and try to upload a submission, you will be able to select the GitHub submission options and select your private repository for this project to submit your solution on Gradescope.
